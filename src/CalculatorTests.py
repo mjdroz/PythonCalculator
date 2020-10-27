@@ -12,7 +12,7 @@ class MyTestCase(unittest.TestCase):
         self.assertIsInstance(self.calculator, Calculator)
 
     def test_add_method_calculator(self):
-        test_data = CSVReader('/csv/UnitTestAddition.csv').data
+        test_data = CSVReader('/src/UnitTestAddition.csv').data
         pprint(test_data)
         for row in test_data:
             self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), int(row['Result'],), )
