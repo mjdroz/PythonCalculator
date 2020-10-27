@@ -3,6 +3,7 @@ from Calculator import Calculator
 from CSVReader import CSVReader
 from pprint import pprint
 
+
 class MyTestCase(unittest.TestCase):
 
     def setUp(self) -> None:
@@ -13,14 +14,16 @@ class MyTestCase(unittest.TestCase):
 
     def test_add_method_calculator(self):
         test_data = CSVReader('/src/UnitTestAddition.csv').data
-        pprint(test_data)
         for row in test_data:
-            self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), int(row['Result'],), )
-            self.assertEqual(self.calculator.result, int(row['Result']) )
+            self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), int(row['Result']))
+            self.assertEqual(self.calculator.result, int(row['Result']))
 
-    '''def test_subtract_method_calculator(self):
-        self.assertEqual(self.calculator.subtract(,), )
-        self.assertEqual(self.calculator.result, )'''
+    def test_subtract_method_calculator(self):
+        test_data = CSVReader('/src/UnitTestSubtraction.csv').data
+        for row in test_data:
+            self.assertEqual(self.calculator.subtract(row['Value 1'], row['Value 2']), int(row['Result']))
+            self.assertEqual(self.calculator.result,int(row['Result']))
+
 
 if __name__ == '__main__':
     unittest.main()
