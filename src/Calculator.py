@@ -12,6 +12,9 @@ def division(a,b):
     fixedC = "{:.9f}".format(c)
     return float(fixedC)
 
+def square(a):
+    return float(a) ** 2
+
 class Calculator:
     result = 0
 
@@ -32,4 +35,8 @@ class Calculator:
 
     def divide(self, a, b):
         self.result = division(a, b)
+        return self.result
+
+    def square(self,a):
+        self.result = square(a)
         return self.result

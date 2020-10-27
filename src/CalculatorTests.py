@@ -36,5 +36,11 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.divide(row['Value 2'], row['Value 1']), float(row['Result']))
             self.assertEqual(self.calculator.result, float(row['Result']))
 
+    def test_square_method_calculator(self):
+        test_data = CSVReader('/src/UnitTestSquare.csv').data
+        for row in test_data:
+            self.assertEqual(self.calculator.square(row['Value 1']), float(row['Result']))
+            self.assertEqual(self.calculator.result, float(row['Result']))
+
 if __name__ == '__main__':
     unittest.main()
