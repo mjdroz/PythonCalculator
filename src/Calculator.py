@@ -11,15 +11,15 @@ def multiplication(a,b):
 
 def division(a,b):
     c = float(a) / float(b)
-    fixedC = "{:.9f}".format(c)
-    return float(fixedC)
+    return round(c, 9)
 
 def square(a):
     return float(a) ** 2
 
 def squareRoot(a):
     r = math.sqrt(float(a))
-    return r
+    roundRoot = round(r, 8)
+    return roundRoot
 
 class Calculator:
     result = 0
